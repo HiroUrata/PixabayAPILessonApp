@@ -20,7 +20,7 @@ class GetPixabayDataModel{
 
 extension GetPixabayDataModel{
     
-    func searchImage(searchKey:String,searchCount:String){
+    func searchImage(searchKey:String,searchCount:Int){
         
         let pixabayURL = "https://pixabay.com/api/?key=22343236-f9a23846f5c6250f4483d03d6&q=\(searchKey)"  //APIKey s
         
@@ -33,7 +33,7 @@ extension GetPixabayDataModel{
                 self.imageURLArray = []  //検索する時に、データの重複を防ぐ
                 let json:JSON = JSON(response.data as Any)
                 
-                for count in 0...Int(searchCount)! - 1{
+                for count in 0...searchCount - 1{
                     
                     if json["hits"][count]["webformatURL"].string != nil{  //取得できる"webformatURL"が存在する時は、"webformatURL"を取得する
                         

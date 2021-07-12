@@ -39,7 +39,7 @@ class ViewController: UIViewController{
         
         if (keyowrdTextField.text!.isEmpty && countTextField.text!.isEmpty) != true{
             
-            self.getPixabayDataModel.searchImage(searchKey: self.keyowrdTextField.text!, searchCount: self.countTextField.text!)
+            self.getPixabayDataModel.searchImage(searchKey: self.keyowrdTextField.text!, searchCount: Int(self.countTextField.text!)!)
             
             DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                 
