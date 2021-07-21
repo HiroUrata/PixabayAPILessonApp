@@ -22,7 +22,7 @@ extension GetPixabayDataModel{
     
     func searchImage(searchKey:String,searchCount:Int){
         
-        let pixabayURL = "https://pixabay.com/api/?key=22343236-f9a23846f5c6250f4483d03d6&q=\(searchKey)"  //APIKey s
+        let pixabayURL = "~~~~~~~~~APIKey~~~~~~~~~&q=\(searchKey)"  //APIKey 
         
         AF.request(pixabayURL, method: .get, parameters: nil, encoding: JSONEncoding.default).responseJSON { (response) in
             
